@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from "react";
 import { Weather } from './components/weather'
+import {Prognos } from './components/prognos'
 
 
 export default function App() {
@@ -21,15 +22,18 @@ export default function App() {
         .then(res => res.json())
         .then(result => {
           setData(result)
-          console.log(result);
         });
     }
     fetchData();
   }, [lat, long])
+
   return (
     <div className="App">
       {(typeof data.main != 'undefined') ? (
-        <Weather weatherData={data} />
+        <>
+          <Weather weatherData={data} />
+          <Prognos weatherData={data} />
+        </>
       ) : (
         <div></div>
       )}
