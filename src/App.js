@@ -2,14 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from "react";
 import { Weather } from './components/weather'
-import {Prognos } from './components/prognos'
-
+import {Forecast } from './components/forecast'
 
 export default function App() {
-
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [data, setData] = useState([]);
+  const [forecast, setForecast] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +21,13 @@ export default function App() {
         .then(res => res.json())
         .then(result => {
           setData(result)
+          console.log(result)
+        });
+      await fetch(`${process.env.REACT_APP_API_URL}/forecast?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
+        .then(res => res.json())
+        .then(result => {
+          setForecast(result)
+          console.log(result)
         });
     }
     fetchData();
@@ -32,7 +38,13 @@ export default function App() {
       {(typeof data.main != 'undefined') ? (
         <>
           <Weather weatherData={data} />
-          <Prognos weatherData={data} />
+        </>
+      ) : (
+        <div></div>
+      )}
+      {(typeof forecast.list != 'undefined') ? (
+        <>
+          <Forecast forecastData={forecast} />
         </>
       ) : (
         <div></div>

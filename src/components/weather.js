@@ -9,7 +9,7 @@ export const Weather = ({ weatherData }) => {
   const [unit, setUnit] = useState(`${ weatherData.main.temp } C`)
 
   const Farenheit = `${Math.round(weatherData.main.temp * 2 + 30)} F`
-  const Celcius = `${weatherData.main.temp} C`
+  const Celcius = `${Math.round(weatherData.main.temp)} C`
 
   const oppositeUnit = unit === Celcius ? "Farenheit" : "Celcius";
 
