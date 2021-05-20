@@ -16,22 +16,33 @@ export const Forecast = ({ forecastData }) => {
     if (!dailyData[day])
       dailyData[day] = [];
     dailyData[day].push({ ...item, day, time });
+
+
+
     console.log(dailyData)
   });
 
   return (
     <div>
-       <Card>
-         <Card.Content>
+      <Card>
+        <Card.Content>
           <Card.Header className="header">Forecast</Card.Header>
-          
-        
+          {Object.values(dailyData).map((items) =>
+            <p>
+              {Object.values(items).map((days, index) => index == 4 && (
+                <>
+                  <h3>{days.day}</h3>
+                  <p>{days.main.temp}&deg;</p>
+                  <p>{days.weather[0].description}</p>
+                </>
+              ))}
+            </p>)}
         </Card.Content>
         <Card.Content>
           <Card.Header className="header">5 days Forecast</Card.Header>
-     
+
         </Card.Content>
-      </Card> 
+      </Card>
     </div>
   )
 }
