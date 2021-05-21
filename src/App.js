@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from "react";
 import { Weather } from './components/weather'
@@ -21,13 +20,11 @@ export default function App() {
         .then(res => res.json())
         .then(result => {
           setData(result)
-          console.log(result)
         });
       await fetch(`${process.env.REACT_APP_API_URL}/forecast?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
         .then(res => res.json())
         .then(result => {
           setForecast(result)
-          console.log(result)
         });
     }
     fetchData();
