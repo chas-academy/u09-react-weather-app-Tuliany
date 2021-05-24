@@ -15,8 +15,9 @@ export const Forecast = ({ forecastData }) => {
     if (!dailyData[day])
       dailyData[day] = [];
     dailyData[day].push({ ...item, day, time });
-  
   }));
+
+  
 
   return (
     <div>
@@ -25,26 +26,29 @@ export const Forecast = ({ forecastData }) => {
           <Card.Header className="header">Forecast</Card.Header>
           {Object.values(dailyData).map((items, index) => index === 0 &&(
             <p>
-              {Object.values(items).map((days) =>
+              {Object.values(items).map((days) => (
                 <>
                   <h4 key={days.main}>{days.dt_txt}</h4>
                   <p>{days.main.temp}&deg;</p>
+                  <p>{days.weather.icon}</p>
+                  
                 </>
-              )}
+              ))}
             </p>))}
 
             
         </Card.Content>
         <Card.Content>
           <Card.Header className="header">5 days Forecast</Card.Header>
-          {Object.values(dailyData).map((items) =>
+          {Object.values(dailyData).map((items) => 
             <p>
               {Object.values(items).map((days, index) => index === 4 && (
+                
                 <>
                   <h3>{days.day}</h3>
                   <p>{days.main.temp}&deg;</p>
-                  <p>{days.weather[0].description}</p>
-                </>
+                   <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" />
+                 </>
               ))}
             </p>)}
         </Card.Content>
