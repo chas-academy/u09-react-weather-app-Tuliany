@@ -19,8 +19,6 @@ export const Weather = ({ weatherData }) => {
     convert ? setUnit(Celcius) : setUnit(Farenheit)
     }
   
-
-    let locationIcon = weatherData.weather[0]
     const {icon} = weatherData.weather[0]
     console.log(icon)
 
@@ -36,7 +34,7 @@ export const Weather = ({ weatherData }) => {
         <p>Wind speed: {weatherData.wind.speed} </p>
         <p>Day: {moment().format('dddd')}</p>
         <p>Date: {moment().format('LL')}</p>
-        <img src={`${process.env.REACT_APP_ICON_URL}/${icon}.png' `} alt="weather-icon"/>
+        <img src={`${process.env.REACT_APP_ICON_URL}/${icon}@2x.png`} alt="weather-icon"/>
       </Card.Content>
       <button onClick={handleConvert}> Convert to {oppositeUnit}</button>
     </Card>
