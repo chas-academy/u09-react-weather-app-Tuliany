@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
 import { Weather } from './components/weather'
-import {Forecast } from './components/forecast'
+import {  Forecast } from './components/forecast'
 
 export default function App() {
   const [lat, setLat] = useState([]);

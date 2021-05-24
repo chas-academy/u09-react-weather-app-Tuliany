@@ -35,7 +35,7 @@ export const Forecast = ({ forecastData }) => {
                 </>
               ))}
             </p>))}
-
+         
             
         </Card.Content>
         <Card.Content>
