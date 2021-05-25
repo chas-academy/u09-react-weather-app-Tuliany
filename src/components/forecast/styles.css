@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+
+.card {
+ color: black;
+	border-radius: 8px;
+	display: block;
+	margin: 1rem;
+	position: relative;
+	align-items: left;
+	width: 300px;
+}
+
+.header {
+  background-color: #424242;
+
+  border-color: #707070;
+    border-width: 1.5px !important;
+    border-style: solid;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 2px;
+}
+
+.card-content {
+  margin: 24px;
+  text-align: left;
+  margin-bottom: 8px;
+  background-color: #000000;
+  background-image: linear-gradient(387deg, #000000 0%, #414141 100%);
+  border-color: #414141;
+  border-width: 1.5px;
+}
