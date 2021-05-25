@@ -1,14 +1,14 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import { Weather } from './components/weather'
-import {  Forecast } from './components/forecast'
+import { Weather } from './components/weather/index'
+import { Forecast } from './components/forecast/index'
 
 export default function App() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [data, setData] = useState([]);
   const [forecast, setForecast] = useState([])
-
+  
   useEffect(() => {
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {

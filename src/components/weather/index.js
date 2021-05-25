@@ -3,8 +3,6 @@ import React, { useState, } from 'react';
 import { Card } from 'semantic-ui-react'
 import moment from 'moment';
 
-
-
 export const Weather = ({ weatherData }) => {
   const [convert, setConvert] = useState(false)
   const [unit, setUnit] = useState(`${ weatherData.main.temp } C`)
