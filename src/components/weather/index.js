@@ -18,7 +18,6 @@ export const Weather = ({ weatherData }) => {
     }
   
     const {icon} = weatherData.weather[0]
-    console.log(icon)
 
   return (
     <Card>

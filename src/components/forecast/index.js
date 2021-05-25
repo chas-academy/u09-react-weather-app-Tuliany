@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 
 
 export const Forecast = ({ forecastData }) => {
-  var dailyData = {};
+  const dailyData = {};
 
   forecastData.list.forEach((item => {
     const dateTime = new Date(item.dt * 1000);
@@ -15,7 +15,6 @@ export const Forecast = ({ forecastData }) => {
       dailyData[day] = [];
     dailyData[day].push({ ...item, day, time });
   }));
-
 
 
   return (
@@ -38,7 +37,6 @@ export const Forecast = ({ forecastData }) => {
                   </h4>
                   <p>{days.main.temp}&deg;</p>
                   <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" />
-
                 </>
               ))}
             </p>))}
