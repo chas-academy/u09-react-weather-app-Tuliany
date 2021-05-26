@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+#city-header{
+  font-size: 3em;
+}
 
 header {
   font-family: "Lobster", cursive;
@@ -13,6 +16,13 @@ header {
   border-radius: 20px;
   padding: 50px;
   margin: 50px;
+  width: fit-content;
+  align-self: center;
+  transition: transform 1s;
+}
+
+.weather-info:hover{
+ transform: scale(1.2);
 }
 
 .weather-temp {
@@ -30,7 +40,6 @@ header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  width: 500px;
 }
 
 button {

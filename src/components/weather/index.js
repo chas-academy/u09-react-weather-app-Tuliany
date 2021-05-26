@@ -24,13 +24,13 @@ export const Weather = ({ weatherData }) => {
       <main>
         
         <section className="weather-info">
-          <header className="header">{weatherData.name} Weather</header>
+          <header className="header" id="city-header">{weatherData.name} Weather</header>
           <section className="weather-temp">
             <img src={`${process.env.REACT_APP_ICON_URL}/${icon}@2x.png`} alt="weather-icon" height="200px" width="200px" />
             <>
               <div>
                 <h1><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {unit}&deg; </h1>
-                <h3>  {weatherData.weather[0].main}</h3>
+                <h2>  {weatherData.weather[0].main}</h2>
               </div>
               <div className="sun-hours">
                 <h2><i class="fa fa-sun-o" title="sunrise" aria-hidden="true"></i> {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</h2>
