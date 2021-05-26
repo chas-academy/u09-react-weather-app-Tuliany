@@ -1,6 +1,5 @@
 import React, { useState, } from 'react';
 import './styles.css';
-import { Card } from 'semantic-ui-react'
 import moment from 'moment';
 
 
@@ -34,16 +33,16 @@ export const Weather = ({ weatherData }) => {
                 <h3>  {weatherData.weather[0].main}</h3>
               </div>
               <div className="sun-hours">
-                <h3><i class="fa fa-sun-o" title="sunrise" aria-hidden="true"></i> {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</h3>
-                <h3><i class="fa fa-moon-o" title="sunset" aria-hidden="true"></i> {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN')}</h3>
+                <h2><i class="fa fa-sun-o" title="sunrise" aria-hidden="true"></i> {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('en-IN')}</h2>
+                <h2><i class="fa fa-moon-o" title="sunset" aria-hidden="true"></i> {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('en-IN')}</h2>
               </div>
             </>
           </section>
           <section className="weather-etx">
-            <h4><i class="fa fa-tint" title="humidity" aria-hidden="true"></i> {weatherData.main.humidity} </h4>
-            <h4><i class="fas fa-wind" title="wind"></i> {weatherData.wind.speed} </h4>
-            <h4><i class="fas fa-calendar-day" title="week day"></i> {moment().format('dddd')}</h4>
-            <h4><i class="fas fa-calendar-alt" title="calender"></i> {moment().format('LL')}</h4>
+            <h3><i class="fa fa-tint" title="humidity" aria-hidden="true"></i> {weatherData.main.humidity} </h3>
+            <h3><i class="fas fa-wind" title="wind"></i> {weatherData.wind.speed} </h3>
+            <h3><i class="fas fa-calendar-day" title="week day"></i> {moment().format('dddd')}</h3>
+            <h3><i class="fas fa-calendar-alt" title="calender"></i> {moment().format('LL')}</h3>
           </section>
           <button className="convert" title={`convert to ${oppositeUnit}`} onClick={handleConvert}> {oppositeUnit}</button>
 
