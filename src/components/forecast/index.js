@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import { Card } from 'semantic-ui-react'
 
 
 export const Forecast = ({ forecastData }) => {
@@ -18,46 +17,46 @@ export const Forecast = ({ forecastData }) => {
 
 
   return (
-    <div>
-      <Card>
-        <Card.Content>
-          <Card.Header className="header">Forecast</Card.Header>
+      <main>
+        <section className="forecast">
+          <header className="header">Todays  <i class="fa fa-clock-o" aria-hidden="true"></i> Forecast</header>
           {Object.values(dailyData).map((items, index) => index === 0 && (
-            <p>
+            <div className="forecast-container">
               {Object.values(items).map((days) => (
-                <>
-                  <h4 key={days.main}>
+                <div className="hourly">
+                  <h2 key={days.main}>
                     {days.dt_txt.includes('06:00:00') && ('Early morning')}
                     {days.dt_txt.includes('09:00:00') && ('Morning')}
                     {days.dt_txt.includes('12:00:00') && ('Noon')}
                     {days.dt_txt.includes('15:00:00') && ('Afternoon')}
                     {days.dt_txt.includes('18:00:00') && ('Evening')}
                     {days.dt_txt.includes('21:00:00') && ('Night')}
-                    {days.dt_txt.includes('21:00:00') && ('Midnight')}
-                  </h4>
-                  <p>{days.main.temp}&deg;</p>
-                  <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" />
-                </>
+                    {days.dt_txt.includes('00:00:00') && ('Midnight')}
+                    {days.dt_txt.includes('03:00:00') && ('😴 Zzz')}
+                  </h2>
+                  <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" width="200" height="200" />
+                  <p><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {days.main.temp}&deg;</p>
+                </div>
               ))}
-            </p>))}
-
-
-        </Card.Content>
-        <Card.Content>
-          <Card.Header className="header">5 days Forecast</Card.Header>
+              </div>
+            ))}  
+        </section>
+        <section className="forecast">
+          <header className="forecast-header">5 days Forecast</header>
+          <div className="forecast-container">
           {Object.values(dailyData).map((items) =>
-            <p>
+            <>
               {Object.values(items).map((days, index) => index === 4 && (
-
-                <>
-                  <h3>{days.day}</h3>
-                  <p>{days.main.temp}&deg;</p>
+                <div className="daily">
+                  <h2>{days.day}</h2>
                   <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" />
-                </>
+                  <p>{days.main.temp}&deg;</p>
+                </div>
               ))}
-            </p>)}
-        </Card.Content>
-      </Card>
-    </div>
+            </>)}
+            </div>
+        </section>
+      </main>
+ 
   )
 }

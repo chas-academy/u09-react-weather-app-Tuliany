@@ -1,4 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 
+.forecast-header{
+  margin-bottom: 30px;
+}
 
+.forecast{
+  backdrop-filter: blur(20px);
+  border: 2px solid #b18597;
+  border-radius: 20px;
+  padding: 50px;
+  margin: 50px;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.week-forecast-container{
+  display: flex;
+  width: 700px;
+}
+
+.hourly, .daily {
+  display: flex;
+  flex-direction: column;
+  transition: transform 1s;
+}
+
+.hourly:hover, .daily:hover{
+   transform: scale(1.1);
+   
+}
 
