@@ -1,12 +1,20 @@
+
+
 .App {
   background-image: url("https://nitrocdn.com/rxuYeOlLVyqoowovtaNSrdqKwKZDavKP/assets/static/source/rev-024b019/wp-content/uploads/2019/02/what-is-pink-cloud.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   min-height: 100vh;
-  font-family: "Arial";
   font-size: 16px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }

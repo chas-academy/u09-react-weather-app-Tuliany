@@ -32,6 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <main>
       {(typeof data.main != 'undefined') ? (
         <>
           <Weather weatherData={data} />
@@ -46,6 +47,7 @@ export default function App() {
       ) : (
         <div></div>
       )}
+      </main>
     </div>
   );
 }

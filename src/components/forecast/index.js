@@ -18,7 +18,7 @@ export const Forecast = ({ forecastData }) => {
 
   return (
     <main>
-      <section className="forecast">
+      <section className="forecast" id="todays-forecast">
         <header className="forecast-header">Todays  <i class="fa fa-clock-o" aria-hidden="true"></i> Forecast</header>
         {Object.values(dailyData).map((items, index) => index === 0 && (
           <div className="forecast-container">
@@ -41,7 +41,7 @@ export const Forecast = ({ forecastData }) => {
           </div>
         ))}
       </section>
-      <section className="forecast">
+      <section className="forecast" id="five-days-forecast">
         <header className="forecast-header"> <i class="fas fa-calendar-week"></i> 5 days Forecast </header>
         <div className="forecast-container">
           {Object.values(dailyData).map((items) =>

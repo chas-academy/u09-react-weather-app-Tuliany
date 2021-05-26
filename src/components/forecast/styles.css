@@ -1,34 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 
-.forecast-header{
+.forecast-header {
   margin-bottom: 30px;
 }
 
-.forecast{
+.forecast {
   backdrop-filter: blur(20px);
   border: 2px solid #b18597;
   border-radius: 20px;
   padding: 50px;
   margin: 50px;
+  width: fit-content;
+}
+
+#todays-forecast {
+  align-self: center;
 }
 
 .forecast-container {
   display: flex;
   justify-content: space-evenly;
 }
-.week-forecast-container{
+.week-forecast-container {
   display: flex;
   width: 700px;
 }
 
-.hourly, .daily {
+.hourly,
+.daily {
   display: flex;
   flex-direction: column;
   transition: transform 1s;
 }
 
-.hourly:hover, .daily:hover{
-   transform: scale(1.1);
-   
+.hourly:hover,
+.daily:hover {
+  transform: scale(1.1);
 }
-
