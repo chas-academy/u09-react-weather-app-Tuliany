@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 
-
 export const Forecast = ({ forecastData }) => {
   const dailyData = {};
 
@@ -14,7 +13,6 @@ export const Forecast = ({ forecastData }) => {
       dailyData[day] = [];
     dailyData[day].push({ ...item, day, time });
   }));
-
 
   return (
     <main>
@@ -42,7 +40,7 @@ export const Forecast = ({ forecastData }) => {
         ))}
       </section>
       <section className="forecast" id="five-days-forecast">
-        <header className="forecast-header"> <i class="fas fa-calendar-week"></i> 5 days Forecast </header>
+        <header className="forecast-header"> <i class="fas fa-calendar-week"></i> This Week Forecast </header>
         <div className="forecast-container">
           {Object.values(dailyData).map((items) =>
             <>
@@ -50,7 +48,6 @@ export const Forecast = ({ forecastData }) => {
                 const getWeekDays = new Date(days.dt_txt)
                 const weekdayStr = getWeekDays.toString()
                 const weekday = weekdayStr.substring(0, 3)
-
                 return (
                   index === 4 && (
                     <div className="daily">
