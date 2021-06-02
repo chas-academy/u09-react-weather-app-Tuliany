@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-#city-header{
+#city-header {
   font-size: 3em;
 }
 
@@ -9,7 +9,29 @@ header {
   font-size: 2em;
   padding: 2px;
 }
+h1 {
+  font-size: 2em;
+  margin-top: auto;
+}
+h3 {
+  margin: 0 25px;
+}
 
+h2,
+h3 {
+   transition: transform 1s;
+  
+}
+h2:hover,
+h3:hover {
+ transform: scale(1.5);
+}
+
+.description {
+  font-family: "Lobster";
+  font-size: 30px;
+  font-weight: lighter;
+}
 .weather-info {
   backdrop-filter: blur(20px);
   border: 2px solid #b18597;
@@ -18,28 +40,24 @@ header {
   margin: 50px;
   width: fit-content;
   align-self: center;
-  transition: transform 1s;
-}
-
-.weather-info:hover{
- transform: scale(1.2);
 }
 
 .weather-temp {
-  display: flex;
+  display: block;
   align-items: center;
-  justify-content: space-between;
+  margin-bottom: 31px;
 }
 
 .sun-hours {
   display: block;
-  padding-left: 20px;
+  padding-left: 30px;
 }
 
 .weather-etx {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  margin: 20px;
 }
 
 button {
@@ -57,7 +75,7 @@ button {
 .convert {
   align-self: flex-end;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 26px;
   text-transform: uppercase;
   padding: 5px 5px;
   background: #fff0f0;
