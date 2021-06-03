@@ -21,3 +21,6 @@ Be able to get a weather forecast for weather conditions (as above) 5 days ahead
 - [x]Design / color & shape based on weather.com (Links to an external page.) Links to an external page. or similar applications / apps
 
 
+## View it live
+
+https://chas-weather-app-by-me.netlify.app/
