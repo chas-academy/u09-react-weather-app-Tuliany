@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-export const Forecast = ({ forecastData }) => {
+export const Forecast = ({ forecastData, convert }) => {
   const dailyData = {};
 
   forecastData.list.forEach((item => {
@@ -33,7 +33,7 @@ export const Forecast = ({ forecastData }) => {
                   {days.dt_txt.includes('03:00:00') && ('😴 Zzz')}
                 </h2>
                 <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" width="200" height="200" />
-                <h2><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {days.main.temp}&deg;</h2>
+                <h2><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {convert ? days.main.temp : days.main.temp *2 + 30}&deg;</h2>
               </div>
             ))}
           </div>

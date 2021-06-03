@@ -1,19 +1,17 @@
-import React, { useState, } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import moment from 'moment';
 
-export const Weather = ({ weatherData }) => {
-  const [convert, setConvert] = useState(true)
+export const Weather = ({ weatherData, handleConvert, convert }) => {
   const Farenheit = `${Math.round(weatherData.list[0].main.temp * 2 + 30)} F`
   const Celcius = `${Math.round(weatherData.list[0].main.temp)} C`
   const [unit, setUnit] = useState(Celcius)
 
   const oppositeUnit = unit === Celcius ? "farenheit" : "celsius";
 
-  const handleConvert = () => {
-    setConvert(!convert)
-    convert ? setUnit(Celcius) : setUnit(Farenheit)
-  }
+useEffect(() => {
+  convert ? setUnit(Celcius) : setUnit(Farenheit)
+}, [Celcius, Farenheit, convert])
 
   const { icon } = weatherData.list[0].weather[0]
 

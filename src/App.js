@@ -6,8 +6,13 @@ import { Forecast } from './components/forecast/index'
 export default function App() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
-  const [data, setData] = useState([]);
   const [forecast, setForecast] = useState([])
+  const [convert, setConvert] = useState(true)
+
+  const handleConvert = () => {
+    setConvert(!convert)
+  }
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,8 +34,8 @@ export default function App() {
       <main>
         {(typeof forecast.list != 'undefined') ? (
           <>
-            <Weather weatherData={forecast} />
-            <Forecast forecastData={forecast} />
+            <Weather weatherData={forecast} handleConvert={() => handleConvert()} convert={convert}/>
+            <Forecast forecastData={forecast} convert={convert}/>
           </>
         ) : (
           <div></div>
