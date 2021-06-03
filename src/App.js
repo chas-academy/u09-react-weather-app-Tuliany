@@ -13,7 +13,6 @@ export default function App() {
     setConvert(!convert)
   }
 
-
   useEffect(() => {
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -34,8 +33,8 @@ export default function App() {
       <main>
         {(typeof forecast.list != 'undefined') ? (
           <>
-            <Weather weatherData={forecast} handleConvert={() => handleConvert()} convert={convert}/>
-            <Forecast forecastData={forecast} convert={convert}/>
+            <Weather weatherData={forecast} handleConvert={() => handleConvert()} convert={convert} />
+            <Forecast forecastData={forecast} convert={convert} />
           </>
         ) : (
           <div></div>

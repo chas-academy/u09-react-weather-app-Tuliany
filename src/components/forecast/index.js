@@ -33,7 +33,7 @@ export const Forecast = ({ forecastData, convert }) => {
                   {days.dt_txt.includes('03:00:00') && ('😴 Zzz')}
                 </h2>
                 <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" width="200" height="200" />
-                <h2><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {convert ? days.main.temp : days.main.temp *2 + 30}&deg;</h2>
+                <h2><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {convert ? days.main.temp : Math.round(days.main.temp * 2 + 30)}&deg;</h2>
               </div>
             ))}
           </div>
@@ -53,7 +53,12 @@ export const Forecast = ({ forecastData, convert }) => {
                     <div className="daily">
                       <h2>{weekday}</h2>
                       <img src={`${process.env.REACT_APP_ICON_URL}/${days.weather[0].icon}@2x.png`} alt="weather-icon" width="200" height="200" />
-                      <h3><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {days.main.temp}&deg;</h3>
+                      <h3><i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i> {convert ? days.main.temp : Math.round(days.main.temp * 2 + 30)}&deg;</h3>
+                      <details>
+                        <summary></summary>
+                        <p><i class="fa fa-tint" title="humidity" aria-hidden="true"></i> {days.main.humidity}</p>
+                        <p><i class="fas fa-wind" title="wind"></i> {days.wind.speed}</p>
+                      </details>
                     </div>
                   )
                 )
@@ -62,6 +67,5 @@ export const Forecast = ({ forecastData, convert }) => {
         </div>
       </section>
     </main>
-
   )
 }
