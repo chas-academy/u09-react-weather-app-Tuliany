@@ -1,7 +1,7 @@
 
 
 .App {
-  background-image: url("https://nitrocdn.com/rxuYeOlLVyqoowovtaNSrdqKwKZDavKP/assets/static/source/rev-024b019/wp-content/uploads/2019/02/what-is-pink-cloud.jpg");
+  background-image: url(../src/assets/images/Cover6.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
